@@ -1,6 +1,7 @@
 import _ from "underscore";
 import Backbone from "backbone";
 import templateHtml from "./tmpl/menu.template.html?raw";
+import ErrorView from "../errors/error.view.js";
 
 const template = _.template(templateHtml);
 
@@ -26,8 +27,12 @@ const MenuView = Backbone.View.extend({
             const menus = this.collection ? await Promise.resolve(this.collection.toJSON()) : [];
             this.$el.html(template({ menus, activeMenu }));
         } catch (err) {
+            const errorView = new ErrorView({ 
+                message: "Error loading menu. Please try again later.",
+                details: err.message 
+            });
+            this.$el.empty().append(errorView.render().el);
             console.error("Error rendering MenuView:", err);
-            this.$el.html("<div>Error loading menu. Please try again later.</div>");
         }
         
         return this;

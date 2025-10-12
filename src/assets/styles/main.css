@@ -103,3 +103,10 @@ body {
 .collapsible-block .arrow.collapsed {
   transform: rotate(90deg);
 }
+
+.error-container {
+  border: 2px solid red;
+  background-color: #ffe6e6;
+  padding: 20px;
+  margin: 10px 0;
+}

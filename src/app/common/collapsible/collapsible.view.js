@@ -4,6 +4,8 @@ import stateModel from "../../models/state.model.js";
 import templateHtml from "./tmpl/collapsible.template.html?raw";
 import arrowIcon from "../../../assets/icons/arrow.svg?raw";
 
+import ErrorView from "../../views/errors/error.view.js";
+
 const template = _.template(templateHtml);
 
 const CollapsibleView = Backbone.View.extend({
@@ -39,6 +41,11 @@ const CollapsibleView = Backbone.View.extend({
             return this;
         } catch (err) {
             console.error(`Error render CollapsibleView ${this.id}:`, err);
+            const errorView = new ErrorView({ 
+                message: `Error loading block ${this.id}. Please try again later.`,
+                details: err.message 
+            });
+            this.$el.empty().append(errorView.render().el);
             return this;
         }
     },

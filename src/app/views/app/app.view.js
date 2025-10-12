@@ -7,6 +7,7 @@ import stateModel from "../../models/state.model.js";
 import BlocksCollection from "../../collections/blocks.collection.js";
 import MenusCollection from "../../collections/menus.collection.js";
 import TabsCollection from "../../collections/tabs.collection.js";
+import ErrorView from "../errors/error.view.js";
 
 const AppView = Backbone.View.extend({
     el: "#app",
@@ -40,7 +41,11 @@ const AppView = Backbone.View.extend({
             await this.tabsCollection.setMenu(defaultMenu);
             this.onStateChange();
         } catch (err) {
-            this.$el.html("<div>Error loading app. Please try again later.</div>");
+            const errorView = new ErrorView({ 
+                message: "Error loading app. Please try again later.",
+                details: err.message 
+            });
+            this.$el.empty().append(errorView.render().el);
         }
 
         this.listenTo(stateModel, "change", this.render);
@@ -71,7 +76,11 @@ const AppView = Backbone.View.extend({
             this.render();
         } catch (err) {
             console.error("Error in onStateChange:", err);
-            this.$el.html("<div>Error loading content. Please try again later.</div>");
+            const errorView = new ErrorView({ 
+                message: "Error loading content. Please try again later.",
+                details: err.message 
+            });
+            this.$el.empty().append(errorView.render().el);
         }
     },
 
