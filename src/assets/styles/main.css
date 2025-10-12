@@ -1,0 +1,105 @@
+/* Layout */
+body {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+#menu {
+  width: 200px;
+  background: #f4f4f4;
+  border-right: 1px solid #ccc;
+  padding: 10px;
+}
+
+#app {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#tabs {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background: #e9e9e9;
+  border-bottom: 1px solid #ccc;
+}
+
+#content {
+  flex: 1;
+  padding: 10px;
+}
+
+/* Menu and Tabs */
+.menu-item,
+.tab-item {
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.menu-item:hover,
+.tab-item:hover {
+  background: #ddd;
+}
+
+.active {
+  background: #007bff;
+  color: white;
+  border-radius: 4px;
+}
+
+/* Collapsible Blocks */
+.collapsible-block {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  background: #fff;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.collapsible-block .header {
+  background: #f9f9f9;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.collapsible-block .header:hover {
+  background: #f1f1f1;
+}
+
+.collapsible-block .content {
+  padding: 10px;
+  line-height: 1.4;
+  border-top: 1px solid #eee;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+/* When collapsed */
+.collapsible-block.collapsed .arrow {
+  transform: rotate(-90deg);
+}
+
+/* Arrow */
+.collapsible-block .arrow {
+  margin-right: 8px;
+  transition: transform 0.25s ease-in-out;
+  color: #444;
+}
+
+.collapsible-block .arrow.expanded {
+  transform: rotate(180deg);
+}
+
+.collapsible-block .arrow.collapsed {
+  transform: rotate(90deg);
+}

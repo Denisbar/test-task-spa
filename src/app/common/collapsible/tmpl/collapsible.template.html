@@ -1,0 +1,11 @@
+<div class="collapsible-block" data-id="<%= id %>">
+  <div class="header">
+    <%= title %>
+    <div class="arrow <%= isCollapsed ? 'collapsed' : '' %>">
+      <%= arrowIcon %>
+    </div>
+  </div>
+  <div class="content" style="display:<%= isCollapsed ? 'none' : 'block' %>">
+    <%= content %>
+  </div>
+</div>

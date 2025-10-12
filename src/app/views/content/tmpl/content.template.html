@@ -1,0 +1,11 @@
+<div id="content-container">
+  <% blocks.forEach(function(block) { %>
+    <div class="collapsible-block" data-id="<%= block.id %>">
+      <div class="header"><%= block.title %></div>
+      <div class="content" style="display:<%= collapsed.includes(block.id) ? 'none' : 'block' %>">
+        <%= block.content %>
+      </div>
+    </div>
+  <% }); %>
+</div>
+

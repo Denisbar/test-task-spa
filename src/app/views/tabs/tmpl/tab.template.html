@@ -1,0 +1,5 @@
+<% tabs.forEach(function(tab) { %>
+  <div class="tab-item <%= tab.key === activeTab ? 'active' : '' %>" data-tab="<%= tab.key %>">
+    <%= tab.label %>
+  </div>
+<% }); %>

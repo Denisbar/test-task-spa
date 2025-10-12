@@ -1,0 +1,5 @@
+<% menus.forEach(function(menu) { %>
+  <div class="menu-item <%= menu.key === activeMenu ? 'active' : '' %>" data-key="<%= menu.key %>">
+    <%= menu.label %>
+  </div>
+<% }); %>

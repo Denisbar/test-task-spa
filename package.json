@@ -1,0 +1,30 @@
+{
+  "name": "test-task-spa",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "eslint": "^8.57.1",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-vitest": "^0.5.4",
+    "jsdom": "^27.0.0",
+    "vite": "^7.1.7",
+    "vite-plugin-string": "^1.2.3",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "backbone": "^1.6.1",
+    "jquery": "^3.7.1",
+    "underscore": "^1.13.7"
+  }
+}
