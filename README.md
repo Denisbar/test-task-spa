@@ -5,7 +5,7 @@
 Clone the repository, install dependencies and run:
 
 ```bash
-git clone https://github.com/yourusername/backbone-spa-test.git
+git clone https://github.com/Denisbar/test-task-spa.git
 cd test-task-spa
 npm install
 npm run dev
