@@ -64,6 +64,8 @@ const AppView = Backbone.View.extend({
 
         this.listenTo(stateModel, "change", this.render);
         this.listenTo(stateModel, "change:menu change:tab", this.onStateChange);
+
+        this.listenTo(stateModel, "change:menu change:tab", this.onStateChange);
     },
 
     async onStateChange() {
