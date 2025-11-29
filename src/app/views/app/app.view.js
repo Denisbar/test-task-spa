@@ -17,6 +17,20 @@ const AppView = Backbone.View.extend({
         this.menus = new MenusCollection();
         this.tabsCollection = new TabsCollection();
 
+        console.log('change in master');
+
+
+        // foos
+        this.contentView = new ContentView({
+            model: stateModel,
+            collection: this.blocks
+        });
+
+        this.contentView = new ContentView({
+            model: stateModel,
+            collection: this.blocks
+        });
+
         this.contentView = new ContentView({
             model: stateModel,
             collection: this.blocks
