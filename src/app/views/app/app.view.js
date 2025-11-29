@@ -17,6 +17,21 @@ const AppView = Backbone.View.extend({
         this.menus = new MenusCollection();
         this.tabsCollection = new TabsCollection();
 
+        console.log('change in master');
+
+        // some change
+
+        // foos
+        this.contentView = new ContentView({
+            model: stateModel,
+            collection: this.blocks
+        });
+
+        this.contentView = new ContentView({
+            model: stateModel,
+            collection: this.blocks
+        });
+
         this.contentView = new ContentView({
             model: stateModel,
             collection: this.blocks
@@ -49,6 +64,8 @@ const AppView = Backbone.View.extend({
         }
 
         this.listenTo(stateModel, "change", this.render);
+        this.listenTo(stateModel, "change:menu change:tab", this.onStateChange);
+
         this.listenTo(stateModel, "change:menu change:tab", this.onStateChange);
     },
 
