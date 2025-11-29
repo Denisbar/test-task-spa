@@ -18,6 +18,10 @@ const AppView = Backbone.View.extend({
         this.tabsCollection = new TabsCollection();
 
         console.log('change in master');
+        console.log('change in master');
+        console.log('change in master');
+        console.log('change in master');
+        console.log('change in master');
 
         // some change
 
