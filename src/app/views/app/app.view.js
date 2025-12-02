@@ -16,7 +16,8 @@ const AppView = Backbone.View.extend({
         this.blocks = new BlocksCollection();
         this.menus = new MenusCollection();
         this.tabsCollection = new TabsCollection();
-
+        console.log('herer');
+        
         console.log('change in master');
         console.log('change in master');
         console.log('change in master');
