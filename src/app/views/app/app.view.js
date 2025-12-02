@@ -20,7 +20,6 @@ const AppView = Backbone.View.extend({
             collection: "rerererr"
         });
         console.log('change in master');
-         // some change 1
 
         // some change
 
