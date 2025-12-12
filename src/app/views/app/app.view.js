@@ -21,7 +21,7 @@ const AppView = Backbone.View.extend({
         });
         console.log('change in master');
 
-
+	console.log('foo');
         console.log('change in master');
 
         // some change
