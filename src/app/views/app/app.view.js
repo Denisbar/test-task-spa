@@ -49,8 +49,6 @@ const AppView = Backbone.View.extend({
         });
         this.tabView = new TabView({
             model: stateModel,
-            collection: this.tabsCollection,
-            blocksCollection: this.blocks
         });
 
         try {
