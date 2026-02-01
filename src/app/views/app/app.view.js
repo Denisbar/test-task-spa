@@ -37,6 +37,9 @@ const AppView = Backbone.View.extend({
             collection: this.blocks
         });
 
+        console.log('change in master');
+        console.log('change in master');
+        
         this.contentView = new ContentView({
             model: stateModel,
             collection: this.blocks
