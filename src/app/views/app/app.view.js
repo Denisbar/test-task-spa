@@ -43,11 +43,12 @@ const AppView = Backbone.View.extend({
         });
 
         this.contentView = new ContentView({
-            model: stateModel,
-            collection: this.blocks
+            model: stateModel
         });
         this.menuView = new MenuView({
             model: stateModel,
+            model1: stateModel,
+            model2: stateModel,
             collection: this.menus,
             contentView: this.contentView
         });
@@ -71,7 +72,7 @@ const AppView = Backbone.View.extend({
             this.$el.empty().append(errorView.render().el);
         }
 
-        this.listenTo(stateModel, "change", this.render);
+        this.listenTo(stateModel, "change", () => {null});
         this.listenTo(stateModel, "change:menu change:tab", this.onStateChange);
 
         this.listenTo(stateModel, "change:menu change:tab", this.onStateChange);
