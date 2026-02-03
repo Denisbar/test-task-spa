@@ -14,14 +14,7 @@ const AppView = Backbone.View.extend({
 
     async initialize() {
         this.blocks = new BlocksCollection();
-        this.menus = new MenusCollection();
-        this.tabsCollection = new TabsCollection();
-        console.log('herer');
-        
-        console.log('change in master');
-        console.log('change in master');
-        console.log('change in master');
-        console.log('change in master');
+        const a = 40;
         this.contentView = new ContentView({
             model: stateModel,
             collection: "rerererr"
