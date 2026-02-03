@@ -15,6 +15,8 @@ const AppView = Backbone.View.extend({
     async initialize() {
         this.blocks = new BlocksCollection();
         const a = 40;
+        this.tabsCollection = new TabsCollection();
+        this.tabsCollection = new TabsCollection();
         this.contentView = new ContentView({
             model: stateModel,
             collection: "rerererr"
