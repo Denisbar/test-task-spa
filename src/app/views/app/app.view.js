@@ -80,8 +80,7 @@ const AppView = Backbone.View.extend({
 
     async onStateChange() {
         try {
-            const menu = stateModel.get("menu");
-            let tab = stateModel.get("tab");
+            const menu = stateModel.get("tab");
 
             const currentTabsMenu = this.tabsCollection.at(0)?.get("menuKey");
             if (currentTabsMenu !== menu) {
